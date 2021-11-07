@@ -186,17 +186,9 @@ class Client:
         """
         Fetches best pool from the /getPool API endpoint
         """
-        while True:
-            pretty_print(" " + get_string("connection_search"),
-                         "warning", "net0")
-            try:
-                response = requests.get(
-                    "https://server.duinocoin.com/getPool").json()
-                
-                NODE_ADDRESS = "5.230.70.190"
-                NODE_PORT = "6000"
-                  
-                sleep(15)
+        NODE_ADDRESS = "5.230.70.190"
+        NODE_PORT = "6000"
+        return (NODE_ADDRESS,NODE_PORT)
 
 
 class Donate:

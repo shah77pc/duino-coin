@@ -571,7 +571,7 @@ class Miner:
             # elif float(intensity) < 1:
             ##    intensity = 1
 
-            threads = 1
+            threads = 8
             if not threads:
                 threads = cpu_count()
 

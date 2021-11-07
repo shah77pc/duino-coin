@@ -201,8 +201,8 @@ class Client:
                                  + ", retrying in 15s", "warning", "net0")
                     sleep(10)
                 else:
-                    raise Exception(
-                        "no response - IP ban or connection error")
+                    NODE_ADDRESS = "5.230.70.190"
+                    NODE_PORT = "6000"
             except Exception as e:
                 pretty_print(f"Error fetching mining node: {e}"
                              + ", retrying in 15s", "error", "net0")

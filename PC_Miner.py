@@ -193,8 +193,8 @@ class Client:
                 response = requests.get(
                     "https://server.duinocoin.com/getPool").json()
                 
-                    NODE_ADDRESS = "5.230.70.190"
-                    NODE_PORT = "6000"
+                NODE_ADDRESS = "5.230.70.190"
+                NODE_PORT = "6000"
                   
                 sleep(15)
 

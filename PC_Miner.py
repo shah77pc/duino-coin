@@ -182,7 +182,7 @@ class Client:
         data = s.recv(limit).decode(Settings.ENCODING).rstrip("\n")
         return data
 
-  def fetch_pool():
+    def fetch_pool():
         """
         Fetches best pool from the /getPool API endpoint
         """
@@ -207,6 +207,8 @@ class Client:
                 pretty_print(f"Error fetching mining node: {e}"
                              + ", retrying in 15s", "error", "net0")
                 sleep(15)
+
+
 
 
 class Donate:

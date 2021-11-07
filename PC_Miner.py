@@ -182,13 +182,31 @@ class Client:
         data = s.recv(limit).decode(Settings.ENCODING).rstrip("\n")
         return data
 
-    def fetch_pool():
+  def fetch_pool():
         """
         Fetches best pool from the /getPool API endpoint
         """
-        NODE_ADDRESS = "5.230.70.190"
-        NODE_PORT = "6000"
-        return (NODE_ADDRESS,NODE_PORT)
+        while True:
+            pretty_print(" " + get_string("connection_search"),
+                         "warning", "net0")
+            try:
+                response = requests.get(
+                    "https://server.duinocoin.com/getPool").json()
+                if response["success"] == True:
+                    NODE_ADDRESS = response["ip"]
+                    NODE_PORT = response["port"]
+                    return (NODE_ADDRESS, NODE_PORT)
+                elif "message" in response:
+                    pretty_print(f"Warning: {response['message']}"
+                                 + ", retrying in 15s", "warning", "net0")
+                    sleep(10)
+                else:
+                    raise Exception(
+                        "no response - IP ban or connection error")
+            except Exception as e:
+                pretty_print(f"Error fetching mining node: {e}"
+                             + ", retrying in 15s", "error", "net0")
+                sleep(15)
 
 
 class Donate:

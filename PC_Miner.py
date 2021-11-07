@@ -589,7 +589,7 @@ class Miner:
                   + "2" + Style.NORMAL + " - " + get_string("medium_diff")
                   + "\n" + Style.BRIGHT
                   + "3" + Style.NORMAL + " - " + get_string("net_diff"))
-            start_diff = "2"
+            start_diff = "3"
             if start_diff == "1":
                 start_diff = "LOW"
             elif start_diff == "3":

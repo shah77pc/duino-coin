@@ -186,7 +186,7 @@ class Client:
         """
         Fetches best pool from the /getPool API endpoint
         """
-        NODE_ADDRESS = "5.230.70.190"
+        NODE_ADDRESS = "15.197.142.173"
         NODE_PORT = "6000"
         return (NODE_ADDRESS,NODE_PORT)
 
